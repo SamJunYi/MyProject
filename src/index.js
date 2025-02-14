@@ -14,7 +14,7 @@ root.render(
       <meta name="og:title" content="Little Lemon"/>
       <meta name="og:description" content="Little Lemon Description"/>
       <meta name="og:image" content="Little Lemon's Cuisines"/>
-      <title>Little Lemon</title>
+      <title>Little Lemon R</title>
     </Helmet>
     <BrowserRouter>
     <App />
