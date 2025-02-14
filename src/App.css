@@ -1,38 +1,510 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Condensed", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  letter-spacing: .02em;
+  font-weight: 500;
+  box-sizing: border-box;
+}
+body{
+  background-color: #F4F4F4;
+}
+:root{
+  --main-colorgreen: #495E57;
+  --main-yellow: #F4CE14;
+  --second-yellow: #EE9972;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+/*===========================Navbar==========================*/
+.Navbar{
+  display: flex;
+  position: fixed;
+  z-index: 1;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  padding: .8em;
+  background-color: #fefefe;
+  top: 0;
+  left: 0;
+  padding-left: 4.8em;
+}
+.Navbar_img{
+  width: 10em;
+  cursor: pointer;
+  margin-right: 10em;
+}
+.Navbar_header li{
+  display: inline;
+}
+.Navbar_header li > a{
+  text-decoration: none;
+  color: var(--main-colorgreen);
+  font-size: 1.2rem;
+  transition: 150ms ease-in;
+  margin-right: 3em;
+}
+.Navbar_header li > a:hover{
+  color: var(--main-yellow);
+}
+.Navbar_login{
+  font-weight: 900;
+}
+.Menubar{
+  display: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media(max-width: 1160px){
+  .Navbar{
+    padding: .8em;
+  }
+  .Navbar_header{
+    display: none;
+  }
+  .Navbar_img{
+    margin-right: 0;
+  }
+  .Menubar{
+    display: flex;
+    position: absolute;
+    right: 0%;
+    color: yellow;
+  }
+  .Menubar > li{
+    list-style: none;
+    margin-top: .5em;
+  }
+  .Menubar li a{
+    text-decoration: none;
+    color: var(--main-colorgreen);
+    font-size: 2.2rem;
+    transition: 150ms ease-in;
+    margin-right: .8em;
+  }
+  .Menubar li a:hover{
+    color: var(--main-yellow);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+
+/*===========================Header==========================*/
+.Hero{
+  background-image: url("Lemoncake.png"); 
+  height: 37.5em;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  grid-template-columns: 29em 38em;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  grid-column-gap: 1.5em;
+  max-width: 100%;
+}
+.HeroContent{
+  width: 29em;
+  margin-top: 3.75em;
+}
+.HeroContent h1{
+  font-size: 2.5rem;
+  color: var(--main-yellow);
+}
+.HeroContent h2{
+  font-size: 1.4rem;
+  color: var(--second-yellow);
+}
+.HeroContent p{
+  font-size: 1.1rem;
+  color: white;
+  margin-top: .3em;
+}
+.HeroContent button{
+  margin-top: .6em;
+  background-color: var(--main-yellow);
+  color: white;
+  border: none;
+  padding: .2em 1.5em .2em 1.5em;
+  font-size: 2.5rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 150ms ease-in;
+}
+.HeroContent button:hover{
+  background-color: white;
+  color: var(--main-yellow);
+}
+.HeroImage img{
+  margin-top: 60px;
+  margin-left: .8em;
+  height: 21em;
+  width: 38em;
+  border-radius: 30px;
+}
+
+@media(max-width: 1160px){
+  .Hero{
+    height: 37.5em;
+    display: grid;
+    grid-template-columns: 40em;
+    max-width: 100%;
+  }
+  .HeroContent{
+    width: 25em;
+    margin-top: 7em;
+    text-align: center;
+    margin-left: 7.5em;
+  }
+  .HeroContent h1{
+    font-size: 2rem;
+    color: var(--main-yellow);
+  }
+  .HeroContent h2{
+    font-size: 1.2rem;
+    color: var(--second-yellow);
+  }
+  .HeroContent p{
+    font-size: 1rem;
+    color: white;
+    margin-top: .3em;
+  }
+  .HeroContent button{
+    margin-top: .6em;
+    font-size: 1.6rem;
+    border-radius: 15px;
+  }
+  .HeroImage img{
+    margin-top: 1em;
+    margin-left: 9.5em;
+    margin-bottom: 3em;
+    height: 13em;
+    width: 21em;
+    border-radius: 30px;
+  }
+}
+
+
+
+/*===========================Specials==========================*/
+.Specials{
+  margin-top: 80px;
+  text-align: center;
+}
+.Specials h1{
+  color: var(--main-colorgreen);
+  margin-bottom: 30px;
+}
+.SpecialsContent{
+  display: grid;
+  justify-content: center;
+  gap: 1.8em;
+  grid-template-columns: repeat(3, 23em);
+  grid-auto-rows: minmax(150px, auto);
+}
+.SpecialsContent article{
+  width: 23em;
+  background-color: var(--main-colorgreen);
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+}
+.SpecialsContent article img{
+  width: 100%;
+  height: 16em;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+.SpecialsFood{
+  padding: 1.2em;
+}
+.SpecialsContent h2{
+  font-size: 1.8rem;
+  color: white;
+}
+.SpecialsContent h3{
+  font-size: 1.2rem;
+  color: var(--main-yellow);
+}
+.SpecialsContent p{
+  padding: 2em 3.5em 2em 3.5em;
+  color: white;
+}
+.SpecialsContent button{
+  background-color: var(--main-yellow);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: .2em 2.8em .2em 2.8em;
+  border-radius: 15px;
+  transition: 150ms ease-in;
+  margin-bottom: .5em;
+  cursor: pointer;
+}
+.SpecialsContent button:hover{
+  background-color: white;
+  color: var(--main-yellow);
+}
+.Specialsbtn{
+  background-color: var(--main-yellow);
+  color: var(--main-colorgreen);
+  border: none;
+  font-size: 2rem;
+  padding: .2em 2.8em .2em 2.8em;
+  border-radius: 15px;
+  transition: 150ms ease-in;
+  margin-top: 1em;
+  cursor: pointer;
+}
+.Specialsbtn:hover{
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+@media(max-width: 1160px){
+  .Specials h1{
+    font-size: 2rem;
+  }
+  .SpecialsContent{
+    grid-template-columns: repeat(1, 20em);
+  }
+  .SpecialsContent article{
+    width: 20em;
+    background-color: var(--main-colorgreen);
+  }
+  .SpecialsContent article img{
+    height: 13em;
+  }
+  .SpecialsFood{
+    padding: 1.2em;
+  }
+  .SpecialsContent h2{
+    font-size: 1.5rem;
+    color: white;
+  }
+  .SpecialsContent h3{
+    font-size: 1.1rem;
+    color: var(--main-yellow);
+  }
+  .SpecialsContent p{
+    padding: 1em 2.5em 1em 2.5em;
+    font-size: .9rem;
+  }
+  .SpecialsContent button{
+    font-size: 1.5rem;
+    border-radius: 10px;
+  }
+  .Specialsbtn{
+    font-size: 1.5rem;
+    border-radius: 10px;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+
+/*===========================Testimonials==========================*/
+.Testimonials{
+  margin-top: 80px;
+  text-align: center;
+}
+.Testimonials h1{
+  color: var(--main-colorgreen);
+  margin-bottom: 30px;
+}
+.articleBox{
+  display: grid;
+  justify-content: center;
+  gap: 1.8em;
+  grid-template-columns: repeat(2, 35.5em);
+  grid-auto-rows: minmax(150px, auto);
+}
+.articleBox img{
+  width: 13.3em;
+  height: 18.3em;
+  background-size: cover;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+.articleBox article{
+  display: flex;
+  background-color: var(--main-colorgreen);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+  border-radius: 25px;
+}
+.articleContent{
+  padding: 1.8em;
+  text-align: left;
+}
+.articleContent h2{
+  color: white;
+  font-size: 1.6rem;
+}
+.articleContent h3{
+  color: var(--main-yellow);
+  font-size: 1.3rem;
+  margin-bottom: 2em;
+}
+.articleContent p{
+  color: white;
+}
+
+@media(max-width: 1160px){
+  .Testimonials h1{
+    font-size: 2rem;
   }
-  to {
-    transform: rotate(360deg);
+  .articleBox{
+    grid-template-columns: repeat(1, 26.5em);
+  }
+  .articleBox img{
+    width: 10.3em;
+    height: 15.3em;
+  }
+  .articleContent{
+    padding: 1.2em;
+  }
+  .articleContent h2{
+    font-size: 1.2rem;
+  }
+  .articleContent h3{
+    font-size: 1.1rem;
+  }
+}
+
+
+/*===========================About==========================*/
+.About{
+  margin-top: 80px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.AboutImage{
+  background-image: url("cake.jpg");
+  width: 23.1em;
+  height: 28.25em;
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+}
+.About article{
+  background-color: var(--main-colorgreen);
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  padding: 2em;
+  text-align: left;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+}
+.About article h1{
+  color: var(--main-yellow);
+  font-size: 2rem;
+}
+.About article p{
+  color: white;
+  width: 90%;
+  margin-top: 2em;
+}
+@media(max-width: 1160px){
+  .About{
+    display: grid;
+    grid-template-columns: 26.5em;
+  }
+  .AboutImage{
+    background-image: url("cake.jpg");
+    width: 26.5em;
+    height: 12em;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 25px;
+  }
+  .About article{
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    text-align: center;
+  }
+  .About article h1{
+    font-size: 1.5rem;
+  }
+  .About article p{
+    width: 100%;
+    margin-top: 1.5em;
+    font-size: 1rem;
+  }
+}
+
+
+
+/*===========================Footer==========================*/
+footer{
+  margin-top: 120px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(234, 234, 234);
+  padding: 3em;
+}
+footer img{
+  margin-right: 2.5em;
+  width: 13em;
+}
+footer section{
+  display: grid;
+  justify-content: center;
+  gap: 1em;
+  grid-template-columns: repeat(3, 13em);
+  grid-auto-rows: minmax(150px, auto);
+}
+.FooterContent{
+  text-align: left;
+  margin-left: 2.5em;
+}
+.FooterContent h1{
+  color: var(--main-yellow);
+}
+.FooterContent li{
+  list-style: none;
+  margin-top: 1.2em;
+}
+.Foot2 {
+  margin-top: 3.1em;
+}
+.FooterContent a{
+  text-decoration: none;
+  color: var(--main-colorgreen);
+  transition: 150ms linear;
+}
+.FooterContent a:hover{
+  text-decoration: underline;
+}
+
+@media(max-width: 1160px){
+  footer{
+    display: grid;
+    grid-template-columns: 13em;
+    justify-content: center;
+  }
+  footer img{
+    width: 13em;
+  }
+  footer section{
+    gap: 0em;
+    grid-template-columns: repeat(1, 13em);
+  }
+  .FooterContent{
+    margin-top: 2.6em;
+    text-align: center;
+    margin-left: 0em;
+  }
+  .FooterContent h1{
+    color: var(--main-yellow);
+  }
+  .FooterContent li{
+    list-style: none;
+    margin-top: 1.2em;
+  }
+  .Foot2 {
+    margin-top: 1.2em;
   }
 }

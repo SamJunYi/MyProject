@@ -1,10 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './Header';
+import Nav from './Nav';
+import Main from './Main';
+import Footer from './Footer';
+import Booking from './Booking'
+import { Link, Route, Routes, BrowserRouter } from 'react-router'
 
 function App() {
+
   return (
-    <div className="App">
-    </div>
+    <>
+
+    <Nav/>
+
+    <Header/>
+
+
+  <Routes>
+      <Route path="/" element={<Main/>} />
+      <Route path="/booking" element={<Booking/>} />
+    </Routes>
+
+
+    <Footer/>
+
+    </>
   );
 }
 
