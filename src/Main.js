@@ -3,11 +3,59 @@ import pasta from './pasta.jpg'
 import cake from './cake.jpg'
 import sam from './Sam.jpg'
 import mark from './Mark.jpg'
+import Booking from './Booking'
+import { useReducer, useEffect} from "react";
+import { useNavigate } from 'react-router'
+import {fetchAPI, submitAPI} from "./Api"
+
+// Initialize available times
+const initializeTimes = async() => {
+    const today = new Date().toISOString().split("T")[0]; // Get today's date in YYYY-MM-DD format
+    return await fetchAPI(today);
+};
+
+//Create the reducer function
+const updateTimes = (state, action) => {
+    switch(action.type){
+        case "UPDATE_TIMES":
+            return action.payload; // Use new available times from API
+        default:
+            return state;
+    }
+}
 
 export function Main(){
+    //Use useReducer instead of useState
+    const [availableTimes, dispatch] = useReducer(updateTimes, [])
+    const navigate = useNavigate();
+
+    // Fetch initial times when component mounts
+    useEffect(()=>{
+        fetchAPI(new Date()).then((times) => {
+            dispatch({type: "UPDATES_TIMES", payload: times})
+        });
+    }, []);
+
+    // Handle form submission
+    const submitForm = async (formData) => {
+        const success = await submitAPI(formData);
+        if (success){
+            navigate("/confirmation");
+        }else{
+            alert("Booking failed. Please try again.");
+        }
+    }
+
     return(
         <>
         <main className="Main">
+            <div className='BookingTable'>
+                <h1>Booking</h1>
+                {/* Pass availableTimes and dispatch function as props */}
+                <Booking availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm}/>
+            </div>
+
+
             <div className="Specials">
                 <h1>Specials</h1>
                 <section className="SpecialsContent">

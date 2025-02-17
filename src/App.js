@@ -5,6 +5,7 @@ import Main from './Main';
 import Footer from './Footer';
 import Booking from './Booking'
 import { Link, Route, Routes, BrowserRouter } from 'react-router'
+import ConfirmedBooking from './ConfirmBooking'
 
 function App() {
 
@@ -15,12 +16,10 @@ function App() {
 
     <Header/>
 
-
-  <Routes>
-      <Route path="/" element={<Main/>} />
-      <Route path="/booking" element={<Booking/>} />
+    <Routes>
+      <Route path="/" element={<Main />}></Route>
+      <Route path="/confirmation" element={<ConfirmedBooking />}></Route>
     </Routes>
-
 
     <Footer/>
 

@@ -31,7 +31,7 @@ body{
   background-color: #fefefe;
   top: 0;
   left: 0;
-  padding-left: 4.8em;
+  padding-left: 3.2em;
 }
 .Navbar_img{
   width: 10em;
@@ -507,4 +507,113 @@ footer section{
   .Foot2 {
     margin-top: 1.2em;
   }
+}
+
+
+/*===========================Booking==========================*/
+.BookingTable{
+  margin-top: 80px;
+  text-align: center;
+}
+.BookingTable h1{
+  color: var(--main-colorgreen);
+  margin-bottom: 30px;
+}
+.BookingTable article{
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(1, 52.5em);
+  grid-auto-rows: minmax(150px, auto);
+}
+.form{
+  background-color: var(--main-colorgreen);
+  padding: 2.4em;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+}
+.form button{
+  background-color: var(--main-yellow);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: .2em 2.8em .2em 2.8em;
+  border-radius: 15px;
+  transition: 150ms ease-in;
+  margin-top: 1em;
+  cursor: pointer;
+}
+.form button:hover{
+  background-color: white;
+  color: var(--main-yellow);
+}
+.BookingTable label{
+  font-size: 1.5rem;
+  color: var(--main-yellow);
+  text-align: left;
+}
+.inputBox{
+  margin-bottom: 1.5em;
+  display: flex;
+  flex-direction: column;
+  margin-left: 5em;
+  margin-right: 5em;
+}
+.inputBox input, select{
+  padding: .5em;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  background-color: rgb(234, 234, 234);
+}
+@media(max-width: 1160px){
+  .BookingTable article{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(1, 26.5em);
+    grid-auto-rows: minmax(150px, auto);
+  }
+  .BookingTable label{
+    font-size: 1.2rem;
+  }
+  .inputBox{
+    margin-left: 4em;
+    margin-right: 4em;
+  }
+  .form button{
+    font-size: 1.5rem;
+    border-radius: 10px;
+  }
+  .inputBox input, select{
+    font-size: 1rem;
+  }
+}
+
+
+
+/*===========================Confirm==========================*/
+.ConfirmedTable{
+  margin-top: 80px;
+  text-align: center;
+}
+.ConfirmedTable h1{
+  color: var(--main-colorgreen);
+  margin-bottom: 10px;
+}
+.ConfirmedTable p{
+  color: var(--main-colorgreen);
+  font-size: 1.2rem;
+}
+.ConfirmedTable button{
+  background-color: var(--main-yellow);
+  color: white;
+  border: none;
+  font-size: 1.6rem;
+  padding: .2em 2.8em .2em 2.8em;
+  border-radius: 15px;
+  transition: 150ms ease-in;
+  margin-top: 1em;
+  cursor: pointer;
+}
+.ConfirmedTable button:hover{
+  background-color: white;
+  color: var(--main-yellow);
 }

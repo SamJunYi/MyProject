@@ -14,7 +14,8 @@ root.render(
       <meta name="og:title" content="Little Lemon"/>
       <meta name="og:description" content="Little Lemon Description"/>
       <meta name="og:image" content="Little Lemon's Cuisines"/>
-      <title>Little Lemon R</title>
+      <title>Little Lemon</title>
+      <script src="https://raw.githubusercontent.com/courseraap/capstone/main/api.js"></script>
     </Helmet>
     <BrowserRouter>
     <App />
